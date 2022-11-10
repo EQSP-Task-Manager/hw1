@@ -14,7 +14,7 @@ def main():
             if (line[0:2] == 'LH'):
                 covered_lines += int(line[3:])
 
-    percentage = round((covered_lines / total_lines), 2)
+    percentage = round((covered_lines / total_lines) * 100, 2)
 
     print(f'percentage {percentage}')
 
