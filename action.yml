@@ -1,13 +1,11 @@
-name: "Python Container Action Template"
-description: "Get started with Python Container actions"
-author: "Jacob Tomlinson"
-inputs:
-  myInput:
-    description: "Input to use"
-    default: "world"
+name: "Test Coverage Check"
+description: "Check Test Coverage percentage in your project"
+author: "Emil Khabibullin, forked a template from Jacob Tomlinson"
+
 outputs:
-  myOutput:
-    description: "Output from the action"
+  percentage:
+    description: "Percentage of code lines that are covered with tests"
+
 runs:
   using: "docker"
   image: "Dockerfile"

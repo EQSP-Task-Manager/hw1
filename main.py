@@ -1,13 +1,23 @@
-import os
-import requests  # noqa We are just importing this to prove the dependency installed correctly
+import sys
 
 
 def main():
-    my_input = os.environ["INPUT_MYINPUT"]
+    lcov_path = 'coverage/lcov.info'
+    total_lines = 0
+    covered_lines = 0
 
-    my_output = f"Hello {my_input}"
+    with open(lcov_path) as f:
+        for line in f:
+            if (line[0:2] == 'LF'):
+                total_lines += int(line[3:])
+            if (line[0:2] == 'HF'):
+                covered_lines += int(line[3:])
 
-    print(f"::set-output name=myOutput::{my_output}")
+    percentage = round((covered_lines / total_lines), 2)
+
+    print(f"::set-output name=percentage::{percentage}")
+
+    sys.exit(0)
 
 
 if __name__ == "__main__":
