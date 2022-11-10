@@ -18,6 +18,9 @@ def main():
 
     print(f"::set-output name=percentage::{percentage}")
 
+    if (percentage < 80):
+        sys.exit(1)
+
     sys.exit(0)
 
 
