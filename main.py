@@ -16,7 +16,7 @@ def main():
 
     percentage = round((covered_lines / total_lines), 2)
 
-    print(f"::set-output name=percentage::{percentage}")
+    print(f'percentage {percentage}')
 
     if (percentage < 80):
         sys.exit(1)
